@@ -1,1 +1,1 @@
-** Simple Gene PathQuery example **
+**Simple Gene PathQuery example**
