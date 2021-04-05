@@ -1,0 +1,58 @@
+<!doctype html>
+<html>
+    <head>
+        <title>imjs gene query example</title>
+        <meta charset="UTF-8"/>
+        <meta name="description" content="imjs gene query example"/>
+        <script src="https://cdn.intermine.org/js/intermine/imjs/latest/im.min.js"></script>
+    </head>
+    <body>
+        <p>This page has imjs loaded and runs a basic Gene PathQuery against LegumeMine when opened.</p>
+        <p>The query finds genes of the genus "Arachis" that are associated with the Arsenic uptake and detoxification pathway. Chromosome is shown as well.</p>
+        <p>Open your browser's console to check for errors.</p>
+        
+        <pre id="result"></pre>
+        
+        <script>
+         var service = new imjs.Service({
+             root: 'https://mines.legumeinfo.org/legumemine/service'
+         });
+
+         var query    = {
+             "constraintLogic": "A and B",
+             "from": "Gene",
+             "select": [
+                 "primaryIdentifier",
+                 "chromosome.primaryIdentifier",
+                 "pathways.identifier",
+                 "pathways.name"
+             ],
+             "orderBy": [
+                 {
+                     "path": "primaryIdentifier",
+                     "direction": "ASC"
+                 }
+             ],
+             "where": [
+                 {
+                     "path": "pathways.name",
+                     "op": "=",
+                     "value": "Arsenic uptake and detoxification",
+                     "code": "A"
+                 },
+                 {
+                     "path": "organism.genus",
+                     "op": "=",
+                     "value": "Arachis",
+                     "code": "B"
+                 }
+             ]
+         };
+
+         service.rows(query).then(function(data) {
+             document.getElementById("result").innerHTML = JSON.stringify(data, null, 4);
+             // document.getElementById("result").innerHTML = JSON.stringify(data.results, null, 4);
+         });
+        </script>
+    </body>
+</html>
