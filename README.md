@@ -1,5 +1,11 @@
 # imjs-help
-Tips and tricks for users of imjs, the InterMine client-side query package.
+Tips and tricks for users of imjs, the InterMine client-side query package. You should bookmark the imjs API documentation:
+
+http://intermine.org/imjs/
+
+as well as read the README on the imjs repo:
+
+https://github.com/intermine/imjs
 
 ## Data Model
 The InterMine data model is a Java-based heirarchical data structure. I will try to keep the mines' current data model updated and displayed in the README for each mine.
@@ -84,9 +90,8 @@ The easiest way to generate an imjs query is to run the query with the Query Bui
 
 ![generate-javascript-code](https://user-images.githubusercontent.com/5657219/113608202-7bbf3c80-9607-11eb-931f-b972f3a0cb2a.jpg)
 
-This tool will generate the imjs code that you need to make the same query from your web app. Here is the imjs for the above query:
+This tool will generate the imjs query that you need to make the same query from your web app, along with the imtables call which you probably do not want. Here is the imjs for the above query:
 
 ![Screenshot_2021-04-05 SoyMine Query results page](https://user-images.githubusercontent.com/5657219/113608500-e5d7e180-9607-11eb-8fa0-cd6ca9b0d21c.png)
 
 You can save that to your desktop or just cut and paste it into your app.
-
