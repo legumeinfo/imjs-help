@@ -83,7 +83,7 @@ And, finally, **Annotatable** (which implictly extends **InterMineObject**, the 
         <collection name="publications" referenced-type="Publication" reverse-reference="entities"/>
 </class>
 ```
-The **Gene** class contains *all* of these attributes, references, and collections, from Gene.primaryIdentifier from **Annotatable** all the way up to the Gene-specific attribute Gene.geneFamilyScoreMeaning.
+The **Gene** class contains *all* of these attributes, references, and collections, from `primaryIdentifier` from **Annotatable** all the way up to the Gene-specific attribute `geneFamilyScoreMeaning`.
 
 ## Prototyping an imjs query
 The easiest way to generate an imjs query is to run the query with the Query Builder on either the legacy mine or the BlueGenes mine, and then, on the results page (which is displayed with the imtables Javascript package) select "Generate JavaScript code" in the selector in the upper right (which defaults to "Generate Python code"):
