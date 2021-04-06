@@ -15,7 +15,7 @@ InterMine data classes (e.g. **Gene**) have three types of class entities:
 - **reference** a single reference to another class
 - **collection** a collection of references to another class
 
-imjs queries are run against the actual data model class names and attributes, references, and collections. These names differ in some cases from the names shown on the mine, which can be synonyms for display purposes only.
+imjs queries are run against the actual data model class names and attributes, references, and collections. These names differ in some cases from the names shown on the mine, which may be aliases for display purposes. For example, `primaryIdentifier` is often called "LIS Identifier" on the mine.
 
 ## Example: Gene
 Here is the **Gene** data model; **Gene** extends **SequenceFeature**, which is any feature that is located on a chromosome. One does not list the entities for **SequenceFeature** in the **Gene** definition. These are *extra* entities added to the **Gene** class.
