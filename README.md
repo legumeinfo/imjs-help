@@ -8,7 +8,7 @@ as well as read the README on the imjs repo:
 https://github.com/intermine/imjs
 
 ## Data Model
-The InterMine data model is a Java-based heirarchical data structure. I will try to keep the mines' current data model updated and displayed in the README for each mine.
+The InterMine data model is a Java-based hierarchical data structure. I will try to keep the mines' current data model updated and displayed in the README for each mine.
 
 InterMine data classes (e.g. **Gene**) have three types of class entities:
 - **attribute** a simple scalar, typically String, Integer, or Double.
