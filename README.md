@@ -8,14 +8,14 @@ as well as read the README on the imjs repo:
 https://github.com/intermine/imjs
 
 ## Data Model
-The InterMine data model is a Java-based heirarchical data structure. I will try to keep the mines' current data model updated and displayed in the README for each mine.
+The InterMine data model is a Java-based hierarchical data structure. I will try to keep the mines' current data model updated and displayed in the README for each mine.
 
 InterMine data classes (e.g. **Gene**) have three types of class entities:
 - **attribute** a simple scalar, typically String, Integer, or Double.
 - **reference** a single reference to another class
 - **collection** a collection of references to another class
 
-imjs queries are run against the actual data model class names and attributes, references, and collections. These names differ in some cases from the names shown on the mine, which can be synonyms for display purposes only.
+imjs queries are run against the actual data model class names and attributes, references, and collections. These names differ in some cases from the names shown on the mine, which may be aliases for display purposes. For example, `primaryIdentifier` is often called "LIS Identifier" on the mine.
 
 ## Example: Gene
 Here is the **Gene** data model; **Gene** extends **SequenceFeature**, which is any feature that is located on a chromosome. One does not list the entities for **SequenceFeature** in the **Gene** definition. These are *extra* entities added to the **Gene** class.
@@ -83,7 +83,7 @@ And, finally, **Annotatable** (which implictly extends **InterMineObject**, the 
         <collection name="publications" referenced-type="Publication" reverse-reference="entities"/>
 </class>
 ```
-The **Gene** class contains *all* of these attributes, references, and collections, from Gene.primaryIdentifier from **Annotatable** all the way up to the Gene-specific attribute Gene.geneFamilyScoreMeaning.
+The **Gene** class contains *all* of these attributes, references, and collections, from `primaryIdentifier` from **Annotatable** all the way up to the Gene-specific attribute `geneFamilyScoreMeaning`.
 
 ## Prototyping an imjs query
 The easiest way to generate an imjs query is to run the query with the Query Builder on either the legacy mine or the BlueGenes mine, and then, on the results page (which is displayed with the imtables Javascript package) select "Generate JavaScript code" in the selector in the upper right (which defaults to "Generate Python code"):
