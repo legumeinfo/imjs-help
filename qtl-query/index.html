@@ -1,0 +1,45 @@
+<!doctype html>
+<html>
+    <head>
+        <title>imjs QTL query example</title>
+        <meta charset="UTF-8"/>
+        <meta name="description" content="imjs QTL query example"/>
+        <script src="https://cdn.intermine.org/js/intermine/imjs/latest/im.min.js"></script>
+    </head>
+    <body>
+        <p>This page has imjs loaded and runs a basic QTL PathQuery against PeanutMine when opened.</p>
+        <p>The query returns: Trait.primaryIdentifier, QTL.identifier, GeneticMap.primaryIdentifier, LinkageGroup.identifier, QTL.start, and QTL.end.</p>
+        <p>Open your browser's console to check for errors.</p>
+        
+        <pre id="result"></pre>
+        
+        <script>
+         var service = new imjs.Service({
+             root: 'https://mines.legumeinfo.org/peanutmine/service'
+         });
+         
+         var query    = {
+             "from": "QTL",
+             "select": [
+                 "trait.primaryIdentifier",
+                 "identifier",
+                 "geneticMap.primaryIdentifier",
+                 "linkageGroup.identifier",
+                 "start",
+                 "end"
+             ],
+             "orderBy": [
+                 {
+                     "path": "identifier",
+                     "direction": "ASC"
+                 }
+             ]
+         };
+
+         service.rows(query).then(function(data) {
+             document.getElementById("result").innerHTML = JSON.stringify(data, null, 4);
+             // document.getElementById("result").innerHTML = JSON.stringify(data.results, null, 4);
+         });
+        </script>
+    </body>
+</html>
